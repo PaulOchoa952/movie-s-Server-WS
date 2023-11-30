@@ -4,7 +4,7 @@ const peliculaController=require('../controllers/peliculas.controllers');
 
 router.get("/",peliculaController.getPeliculas);
 
-router.get("/:peliculaId",peliculaController.getPeliculas);
+router.get("/:peliculaId",peliculaController.getPeliculasById);
 
 router.post("/",peliculaController.newPelicula);
 

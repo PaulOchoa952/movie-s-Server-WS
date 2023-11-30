@@ -2,7 +2,7 @@ const Pelicula = require('../models/pelicula.model');
 
 exports.getPeliculas = async (req, res) => {
     try {
-        const peliculas= await Pelicula.find();
+       const peliculas= await Pelicula.find();
 
        return res.status(200).json({
         message: "Consulta de libros",
@@ -15,7 +15,8 @@ exports.getPeliculas = async (req, res) => {
         });
     }
 }
-exports.getPeliculas = async (req, res) => {
+
+exports.getPeliculasById = async (req, res) => {
     const peliculaId=req.params.peliculaId;
     try {
         const pelicula =await Pelicula.findById(peliculaId);
@@ -42,6 +43,7 @@ exports.newPelicula = async (req, res) => {
         message: "Pelicula creada con exito",
         data:newPelicula   
        });
+
     }catch (error) {
         return res.status(500).json({
             message: "Error al crear la pelicula",
