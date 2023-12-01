@@ -5,12 +5,12 @@ exports.getPeliculas = async (req, res) => {
        const peliculas= await Pelicula.find();
 
        return res.status(200).json({
-        message: "Consulta de libros",
+        message: "Consulta de peliculas",
         data:peliculas
        });
     }catch (error) {
         return res.status(500).json({
-            message: "Error al consultar libros",
+            message: "Error al consultar peliculas",
             data:error
         });
     }
@@ -21,13 +21,13 @@ exports.getPeliculasById = async (req, res) => {
     try {
         const pelicula =await Pelicula.findById(peliculaId);
        return res.status(200).json({
-        message: "Consulta de libro por ID:"+peliculaId,
+        message: "Consulta de pelicula por ID:"+peliculaId,
         data:pelicula
        });
 
     }catch (error) {
         return res.status(500).json({
-            message: "Error al consultar libros",
+            message: "Error al consultar pelicula por ID",
             data:error
         });
     }
